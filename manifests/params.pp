@@ -21,7 +21,9 @@ class bind::params {
         $keys_directory       = '/etc/bind/keys'
         $dynamic_directory    = '/etc/bind/dynamic'
     }
-    elsif $::operatingsystem == 'CentOS' {
+    elsif $::operatingsystem == 'CentOS' or
+	 $::operatingsystem == 'Fedora' {
+
         $package_name         = 'bind'
         $service_name         = 'named'
         $bind_user            = 'named'
